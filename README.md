@@ -1,17 +1,17 @@
 # Applied-AI-Machine-Learning-Model
 <p align = "justify">
-This is part of my university module for applied AI where I had to create a regression machine learning model to predict the housing prices given a number of specific parameters from the boston housing dataset.
+This is part of my university module for applied AI where I had to create a regression machine learning model to predict the housing prices given a number of specific parameters from the Boston Housing Dataset.
 </p>
 
 # Functionality of This System
 <p align = "justify">
 This system is designed to predict the the prices of property in the Boston area using the Boston Housing Dataset based on input features. These features include socio-economic, environmental, and housing-related data such as the crime rate in the area, average number of bedrooms, proximity to the city centre and the demographic.
 <br>
-This system uses regression based machine learning models to identify relationships between property features and house prices, enabling accurate predicitions of property values for new data. It preprocesses data by handling missing values, scaling features, and encoding categorical data variables before training models such as Linear Regression, Random Forest, or ensemble methods. Model performance is evaluated using metrics like RSME and R<sup>2</sup> to measure predicition accuracy and overall effectiveness.
+This system uses regression based machine learning models to identify relationships between property features and house prices, enabling accurate predictions of property values for new data. It preprocesses data by handling missing values, scaling features, and encoding categorical data variables before training models such as Linear Regression, Random Forest, or ensemble methods. Model performance is evaluated using metrics like RSME and R<sup>2</sup> to measure prediction accuracy and overall effectiveness.
 </p>
 
 # What are the Basic Inputs of the System
-This system takes features as iputs which describe various characteristics of the residential area:
+This system takes features as inputs which describe various characteristics of the residential area:
 - CRIM: Crime rate per capita.
 - ZN: The Proportion of residential land zoned for plots over 25,000 sq. feet.
 - INDUS: Proportion of non-retail business acres.
@@ -28,18 +28,18 @@ This system takes features as iputs which describe various characteristics of th
 - LSTAT: The percentage of lower level educated residents.
 
 <p align = "justify">
-The main output of the system isthe median value (MEDV) of a property for a given set of input features.
+The main output of the system is the median value (MEDV) of a property for a given set of input features.
 </p>
 
 # What are the Real World Problems that this System Solves?
 <p align = "justify">
-The project aims to address the challenge of accurately estimating house prices using machine learning methods. Although the Boston Housing Dataset is outdated, it provides a useful foundation for evaluating how property features infulence housing prices. The model can help buyers, estate agents, and planners understand housing markets trends, make informed decisions, and identify factors affecting property prices. However, care must be taken to avoid biases, particularly when using sensitive demographic features. Future improvements could include using a more recent and locally relevant dataset such as London or Bighton.
+The project aims to address the challenge of accurately estimating house prices using machine learning methods. Although the Boston Housing Dataset is outdated, it provides a useful foundation for evaluating how property features influence housing prices. The model can help buyers, estate agents, and planners understand housing markets trends, make informed decisions, and identify factors affecting property prices. However, care must be taken to avoid biases, particularly when using sensitive demographic features. Future improvements could include using a more recent and locally relevant dataset such as London or Bighton.
 </p>
 
 # Details Regarding Algorithm Selection
 ## General Prerequists for all Algorithms
 <p align = "justify">
-Before applying the algorithms, the dataset was loaded and cleaned by removing any unnessecary whitespaces. 
+Before applying the algorithms, the dataset was loaded and cleaned by removing any unnecessary white spaces. 
 </p>
 
 <p align = "center">
@@ -49,7 +49,7 @@ Before applying the algorithms, the dataset was loaded and cleaned by removing a
 </p>
 
 <p align = "justify">
-The features and target variables were then defined by removing the MEDV column from the feature set. Since the dataset contained only numerical data, no feauture encoding was required.
+The features and target variables were then defined by removing the MEDV column from the feature set. Since the dataset contained only numerical data, no feature encoding was required.
 </p>
 
 <p align = "center">
@@ -69,13 +69,13 @@ To evaluate the performance, shuffle split cross-validation was used. This metho
 </p>
 
 <p align = "justify">
-A for loop was implemented to automate five runs of the model, with all training and predicition steps contained within the loop. 
+A for loop was implemented to automate five runs of the model, with all training and prediction steps contained within the loop. 
 </p>
 
 <p align = "center">
   <img width="689" height="184" alt="image" src="https://github.com/user-attachments/assets/15ffdc38-2534-4f80-bb8b-dfa273851b79" />
   <br>
-  <em align = "center">Figure 4: Initialising the alorithms in the for loop</em>
+  <em align = "center">Figure 4: Initialising the algorithms in the for loop</em>
 </p>
 
 <p align = "justify">
@@ -90,7 +90,7 @@ To store the results from each run, empty arrays were created to record the mode
 
 ## Linear Regression
 <p align = "justify">
-The first algorithm tested was linear regression, choosen because the Boston Housing Dataset shows some linear relationship with the housing prices. For example, house values tend to increase with the number of rooms and decrease as the LSTAT value increases.
+The first algorithm tested was linear regression, chosen because the Boston Housing Dataset shows some linear relationship with the housing prices. For example, house values tend to increase with the number of rooms and decrease as the LSTAT value increases.
 </p>
 
 <p align = "center">
@@ -100,25 +100,25 @@ The first algorithm tested was linear regression, choosen because the Boston Hou
 </p>
 
 <p align = "justify">
-Linear regression is simple, easy to interpret, and well suited to prediciting continuous values such as median house prices. It is also relatively resistant to overfitting, which is beneficial given the dataset's small size of 506 records and 13 features. 
+Linear regression is simple, easy to interpret, and well suited to predicting continuous values such as median house prices. It is also relatively resistant to over fitting, which is beneficial given the dataset's small size of 506 records and 13 features. 
 <br>
-Although larger datasets can improve linear regression models, they may also intorduce more noise and complexity. This algorithm was used as a baseline model against which the performance of other algorithms could be compared.
+Although larger datasets can improve linear regression models, they may also introduce more noise and complexity. This algorithm was used as a baseline model against which the performance of other algorithms could be compared.
 </p>
 
 ## Random Forest Regressor
 <p align = "justify">
-The random forest regressor is a supervised learning algorithm that uses multiple decision trees from random subsets of the data to make predictions. It is effective at handling larger datasets and identifying complex, nonn-linear relationships between features, making it well suited to the Boston Housing Dataset.
+The random forest regressor is a supervised learning algorithm that uses multiple decision trees from random subsets of the data to make predictions. It is effective at handling larger datasets and identifying complex, non-linear relationships between features, making it well suited to the Boston Housing Dataset.
 <br>
-Unlike a single decision tree, Random Forest reduces the risk of overfitting by averaging the predictions of many independently created trees. This makes it a more reliable and accurate model for complex regression tasks, particularly when predicting continuous values such as median property values.
+Unlike a single decision tree, Random Forest reduces the risk of over fitting by averaging the predictions of many independently created trees. This makes it a more reliable and accurate model for complex regression tasks, particularly when predicting continuous values such as median property values.
 </p>
 
 ## Gradient Boosting Regressor
 <p align = "justify">
-The gradient boosting regressor was chosen to compare its performance with the random forest regressor, as both are ensemble methods. Unlike random forest, which builds decision trees independently, gradient boosting creates trees sequentially, with each new tree aiming to correct errors made by the previous one. This process helps improve predicition accuracy by reducing residual errors over time.
+The gradient boosting regressor was chosen to compare its performance with the random forest regressor, as both are ensemble methods. Unlike random forest, which builds decision trees independently, gradient boosting creates trees sequentially, with each new tree aiming to correct errors made by the previous one. This process helps improve prediction accuracy by reducing residual errors over time.
 <br>
-However, because the trees are built sequentially, gradient boosting is more prone to overfitting, particularly when working with noisy data or using too mny iterations. It alos requires more computational resources, longer training times, and careful hyperparameter tuning.
+However, because the trees are built sequentially, gradient boosting is more prone to over fitting, particularly when working with noisy data or using too many iterations. It also requires more computational resources, longer training times, and careful hyper parameter tuning.
 <br>
-Despite these challenges, gradient boosting is highly effective at modelling complex, non-linear relationships and often achieves high predictive accuracy. This makes it particularly valuable in fields such as health care, where it can identify subtle patterns in data and improve predicitions for conditions such as heart disease and diabetes.
+Despite these challenges, gradient boosting is highly effective at modelling complex, non-linear relationships and often achieves high predictive accuracy. This makes it particularly valuable in fields such as health care, where it can identify subtle patterns in data and improve predictions for conditions such as heart disease and diabetes.
 </p>
 
 ## Multi-Layer Perceptron (MLP) Regressor
@@ -128,7 +128,7 @@ The MLP regressor is a type of neural network consisting of an input layer, one 
 
 # Measuring if the System is Successful
 <p align = "justify">
-The success of this project was measured using several evaluation metrics. The primary goal wsa to achieve an R<sup>2</sup> score above 80%, indicating that the model explains more than 80% of the variation in the data. Mean Absolute Error (MAE) was used to measure the average magnitude of prediction errors, with lower values indicating greater accuracy. Root Mean Squared Error (RMSE) was also used to assess prediction accuracy by calculating the average difference between predicted and actual values, where smaller values represent better performance. additionally, 5-fold cross-validation was conducted to evaluate the model's stability and reliability. In each iteration, 80% of the data was used for training and 20% for testing, allowing performance consistency across different data splits to be assessed.
+The success of this project was measured using several evaluation metrics. The primary goal was to achieve an R<sup>2</sup> score above 80%, indicating that the model explains more than 80% of the variation in the data. Mean Absolute Error (MAE) was used to measure the average magnitude of prediction errors, with lower values indicating greater accuracy. Root Mean Squared Error (RMSE) was also used to assess prediction accuracy by calculating the average difference between predicted and actual values, where smaller values represent better performance. additionally, 5-fold cross-validation was conducted to evaluate the model's stability and reliability. In each iteration, 80% of the data was used for training and 20% for testing, allowing performance consistency across different data splits to be assessed.
 </p>
 
 <p align = "center">
@@ -152,7 +152,7 @@ The housing values in the dataset are measured in thousands of dollars, meaning 
 <p align = "justify">
 Initial results using untuned models showed that linear regression performed worse than random forest and gradient boosting, particularly in R<sup>2</sup> and error metrics, suggesting that the dataset contains complex, non-linear relationships.
 <br>
-Linear regression achieved an R<sup>2</sup> score of 0.6157, explaining 61.6% of the variance, with an average predicition error of approximately $3,700. The MLP Regressor performed the worst overall, which was expected without any parameter tuning. 
+Linear regression achieved an R<sup>2</sup> score of 0.6157, explaining 61.6% of the variance, with an average prediction error of approximately $3,700. The MLP Regressor performed the worst overall, which was expected without any parameter tuning. 
 </p>
 
 <p align = "center">
@@ -185,15 +185,15 @@ The graphs below illustrate the variation in performance across the different va
   <em align = "center">Graph 3: R<sup>2</sup> Comparison across 5 runs</em>
 </p>
 
-## MLP using Hyperparameter Tuning
+## MLP using Hyper Parameter Tuning
 <p align = "justify">
-I ran a grid search to determine the best hyperparameter tuning to improve the MLP regressor model.
+I ran a grid search to determine the best hyper parameter tuning to improve the MLP regressor model.
 </p>
 
 <p align = "center">
   <img width="547" height="289" alt="image" src="https://github.com/user-attachments/assets/dd059d21-4f06-44ce-91c8-4c5f64265383" />
   <br>
-  <em align = "center">Figure 11: Best hyperparameter grid search setup</em>
+  <em align = "center">Figure 11: Best hyper parameter grid search setup</em>
 </p>
 
 <p align = "justify">
@@ -207,23 +207,23 @@ The following results were deemed as the best for the MLP regressor model as the
 </p>
 
 <p align = "justify">
-After running the models with the new hyperparameter tuning setup, I obtained the following results:
+After running the models with the new hyper parameter tuning setup, I obtained the following results:
 </p>
 
 <p align = "center">
   <img width="691" height="106" alt="image" src="https://github.com/user-attachments/assets/f8db25c6-42f3-4517-9a56-2eaf0f86c1be" />
   <br>
-  <em align = "center">Table 3: Single run results with hyperparameter tuning</em>
+  <em align = "center">Table 3: Single run results with hyper parameter tuning</em>
 </p>
 
 <p align = "center">
   <img width="691" height="103" alt="image" src="https://github.com/user-attachments/assets/9d6b01a1-1110-4caa-9873-5f5601ed48e4" />
   <br>
-  <em align = "center">Table 4: Average cross-validation results with hyperparameter tuning</em>
+  <em align = "center">Table 4: Average cross-validation results with hyper parameter tuning</em>
 </p>
 
 <p align = "justify">
-Hyperparameter tuning significantly improved the performance of the MLP model. After tuning, the MLP outperformed the linear regression model across all evaluationmetrics in both the single test run and the cross-validation results. However, it still lagged behind the random forest and gradient boosting models, which achieved lower prediction errors and higher R<sup>2</sup> scores. 
+Hyper parameter tuning significantly improved the performance of the MLP model. After tuning, the MLP outperformed the linear regression model across all evaluation metrics in both the single test run and the cross-validation results. However, it still lagged behind the random forest and gradient boosting models, which achieved lower prediction errors and higher R<sup>2</sup> scores. 
 <br>
 On average, the MLP's MAE remained approximately $1,000 higher than the random forest and gradient boosting models, and its R<sup>2</sup> score did not reach the target of 80%. The accompanying graphs illustrate the variation in performance across the 5 cross-validation runs.
 </p>
@@ -274,7 +274,7 @@ Below are the results for this setof runs.
 </p>
 
 <p align = "justify">
-Adding a standard scalar significantly improved the MLP model's single run performance, increaseing the R<sup>2</sup> score to 0.8549 (85.5% variance explained) and reducing RMSE by around $1,000. However, cross-validation results did not improve, with the average R<sup>2</sup> decreasing and RMSE increasing to levels similar to linear regression. To address this. the model's hyperparameters were further adjusted through trial and error, resulting in a new set ofoptimised parameters shown in the figure below.
+Adding a standard scalar significantly improved the MLP model's single run performance, increasing the R<sup>2</sup> score to 0.8549 (85.5% variance explained) and reducing RMSE by around $1,000. However, cross-validation results did not improve, with the average R<sup>2</sup> decreasing and RMSE increasing to levels similar to linear regression. To address this. the model's hyper parameters were further adjusted through trial and error, resulting in a new set of optimised parameters shown in the figure below.
 </p>
 
 <p align = "center">
@@ -320,7 +320,16 @@ desirable level.
 </p>
 
 <p align = "justify">
-Although the MLPmodel did not outperform the gradient boosting model, its performance improved substantially compared to linear regression. The tuned MLP achieved a 27.5% lower MAE, a 28.5% lower RMSE, and a 13.6% higher R<sup>2</sup> score than linear regression. However, it remained behind gradient boosting, with 16.9% igher MAE, a 25.2% higher RMSE, and a 12.1% lower R<sup>2</sup> score. Overall, gradient boosting remained the best performing model for this particular dataset.
+Although the MLP model did not outperform the gradient boosting model, its performance improved substantially compared to linear regression. The tuned MLP achieved a 27.5% lower MAE, a 28.5% lower RMSE, and a 13.6% higher R<sup>2</sup> score than linear regression. However, it remained behind gradient boosting, with 16.9% higher MAE, a 25.2% higher RMSE, and a 12.1% lower R<sup>2</sup> score. Overall, gradient boosting remained the best performing model for this particular dataset.
 </p>
 
 # Conclusions and Future Improvements
+<p align = "justify">
+The goal was to achieve an average cross-validation score above 80% for the MLP model, but this was not consistently achieved across five folds, even though individual runs sometimes exceeded 80%. To improve performance, further data preprocessing is recommended, such as feature selection and the use of correlation heat maps to identify important variables. Increasing the number of cross-validation folds could also be explored, although this may not necessarily improve results.
+<br>
+Among the models tested, the gradient boosting regressor performed the best, requiring no parameter tuning and producing the most consistent results.
+<br>
+The dataset also raises ethical and professional concerns. One feature records the number of African Americans in an area, which could reinforce harmful stereotypes by implying a relationship between race and house prices. Additionally, the dataset excludes properties valued above $50,000, resulting in incomplete and potentially misleading data. This limitation reduces confidence in the accuracy and fairness of the models trained on the dataset.
+<br>
+This type of machine learning would be interesting to do with sports, such as predicting the winner of a tennis tournament of the winner of the world cup. This would require a massive amount of data such as individual player rankings, expected goals per match, offensive and defensive ability etc. However, that would still be a good next step for this project.
+</p>

@@ -109,6 +109,7 @@ Although larger datasets can improve linear regression models, they may also int
 <p align = "justify">
 The random forest regressor is a supervised learning algorithm that uses multiple decision trees from random subsets of the data to make predictions. It is effective at handling larger datasets and identifying complex, non-linear relationships between features, making it well suited to the Boston Housing Dataset.
 <br>
+<br>
 Unlike a single decision tree, Random Forest reduces the risk of over fitting by averaging the predictions of many independently created trees. This makes it a more reliable and accurate model for complex regression tasks, particularly when predicting continuous values such as median property values.
 </p>
 
@@ -116,7 +117,9 @@ Unlike a single decision tree, Random Forest reduces the risk of over fitting by
 <p align = "justify">
 The gradient boosting regressor was chosen to compare its performance with the random forest regressor, as both are ensemble methods. Unlike random forest, which builds decision trees independently, gradient boosting creates trees sequentially, with each new tree aiming to correct errors made by the previous one. This process helps improve prediction accuracy by reducing residual errors over time.
 <br>
+<br>
 However, because the trees are built sequentially, gradient boosting is more prone to over fitting, particularly when working with noisy data or using too many iterations. It also requires more computational resources, longer training times, and careful hyper parameter tuning.
+<br>
 <br>
 Despite these challenges, gradient boosting is highly effective at modelling complex, non-linear relationships and often achieves high predictive accuracy. This makes it particularly valuable in fields such as health care, where it can identify subtle patterns in data and improve predictions for conditions such as heart disease and diabetes.
 </p>
@@ -163,6 +166,7 @@ Linear regression achieved an R<sup>2</sup> score of 0.6157, explaining 61.6% of
 
 <p align = "justify">
 Cross-validation results showed improved average performance for both linear regression and random forest, with random forest continuing to outperform the other models. Gradient boosting experienced only a minor decrease in performance, while MLP regressor's results declined significantly, indicating that its initial performance may not have been reliable.
+<br>
 <br>
 The graphs below illustrate the variation in performance across the different validation folds and how the average scores were calculated.
 </p>
@@ -224,6 +228,7 @@ After running the models with the new hyper parameter tuning setup, I obtained t
 
 <p align = "justify">
 Hyper parameter tuning significantly improved the performance of the MLP model. After tuning, the MLP outperformed the linear regression model across all evaluation metrics in both the single test run and the cross-validation results. However, it still lagged behind the random forest and gradient boosting models, which achieved lower prediction errors and higher R<sup>2</sup> scores. 
+<br>
 <br>
 On average, the MLP's MAE remained approximately $1,000 higher than the random forest and gradient boosting models, and its R<sup>2</sup> score did not reach the target of 80%. The accompanying graphs illustrate the variation in performance across the 5 cross-validation runs.
 </p>
@@ -327,9 +332,12 @@ Although the MLP model did not outperform the gradient boosting model, its perfo
 <p align = "justify">
 The goal was to achieve an average cross-validation score above 80% for the MLP model, but this was not consistently achieved across five folds, even though individual runs sometimes exceeded 80%. To improve performance, further data preprocessing is recommended, such as feature selection and the use of correlation heat maps to identify important variables. Increasing the number of cross-validation folds could also be explored, although this may not necessarily improve results.
 <br>
+<br>
 Among the models tested, the gradient boosting regressor performed the best, requiring no parameter tuning and producing the most consistent results.
 <br>
+<br>
 The dataset also raises ethical and professional concerns. One feature records the number of African Americans in an area, which could reinforce harmful stereotypes by implying a relationship between race and house prices. Additionally, the dataset excludes properties valued above $50,000, resulting in incomplete and potentially misleading data. This limitation reduces confidence in the accuracy and fairness of the models trained on the dataset.
+<br>
 <br>
 This type of machine learning would be interesting to do with sports, such as predicting the winner of a tennis tournament of the winner of the world cup. This would require a massive amount of data such as individual player rankings, expected goals per match, offensive and defensive ability etc. However, that would still be a good next step for this project.
 </p>
